@@ -2,7 +2,7 @@ class Setting {
     constructor() {
         this._block = document.querySelector('.setting');
         
-        this._pathBG = '/image/';
+        this._pathBG = 'image/';
         this._bgNigh = 'BG_NIGHT.png';
         this._bgDay = 'BG_DAY.png';
         this._bgEvning = 'BG_EVNING.png';
