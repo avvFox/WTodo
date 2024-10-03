@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мои задачи:</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <script type="module" src="js/index.js"></script>
+    <link rel="icon" href="favicon.ico">
+</head>
+<body class="setting">
+    <div class="conteiner">
+        <header class="header">
+            <div class="date abstract-block">
+                <h4 class="date__time">00:00:00</h4>
+                <h5 class="date__day-of-the-week">9 сентября, понедельник</h5>
+            </div>
+            <div class="cw abstract-block">
+                <form  name="editCity" action="#" method="post">
+                    <input class="cw__city" list="cities" name="cities" >
+                    <datalist id="cities">
+                        <option value="Краснодар">Краснодар</option>
+                        <option value="Москва">Москва</option>
+                        <option value="Санкт Петербург">Санкт Петербург</option>
+                    </datalist>
+                </form>
+                <h3 class="cw__weather">22℃ пасмурно</h3>
+            </div>
+        </header>
+        <main class="todo-list abstract-block">
+            <h1 class="todo-list__title">Список задач</h1>
+            <ul class="todo-list__tasks"> 
+            <form class="todo-list__new" name="addTask" method="post" action="#">
+                <input class="todo-list__new-add" type="text" name="task" placeholder="Новая задача..." required/>
+            </form>
+               
+            </ul>
+            <ul class="todo-list__tasks">
+                
+            </ul>
+        </main>
+    </div>
+</body>
+</html>

@@ -1,0 +1,45 @@
+@font-face {
+    font-family: 'NunitoSans';
+    src: url('../fonts/NunitoSans-Regular.woff') format('woff'),
+         url('../fonts/NunitoSans-Regular.woff2') format('woff2'),
+         url('../fonts/NunitoSans-Regular.ttf') format('truetype'),
+         url('../fonts/NunitoSans-Regular.eot') format('embedded-opentype');
+         font-weight: 300;
+}
+
+@font-face {
+    font-family: 'Unbounded';
+    src: url('../fonts/Unbounded-ExtraLight.woff') format('woff'),
+         url('../fonts/Unbounded-ExtraLight.woff2') format('woff2'),
+         url('../fonts/Unbounded-ExtraLight.ttf') format('truetype'),
+         url('../fonts/Unbounded-ExtraLight.eot') format('embedded-opentype');
+    font-weight: 100;
+}
+
+@font-face {
+    font-family: 'Unbounded';
+    src: url('../fonts/Unbounded-Regular.woff') format('woff'),
+         url('../fonts/Unbounded-Regular.woff2') format('woff2'),
+         url('../fonts/Unbounded-Regular.ttf') format('truetype'),
+         url('../fonts/Unbounded-Regular.eot') format('embedded-opentype');
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: 'Unbounded';
+    src: url('../fonts/Unbounded-SemiBold.woff') format('woff'),
+         url('../fonts/Unbounded-SemiBold.woff2') format('woff2'),
+         url('../fonts/Unbounded-SemiBold.ttf') format('truetype'),
+         url('../fonts/Unbounded-SemiBold.eot') format('embedded-opentype');
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: 'Unbounded';
+    src: url('../fonts/Unbounded-Black.woff') format('woff'),
+         url('../fonts/Unbounded-Black.woff2') format('woff2'),
+         url('../fonts/Unbounded-Black.ttf') format('truetype'),
+         url('../fonts/Unbounded-Black.eot') format('embedded-opentype');
+    font-weight: 900;
+    
+}

@@ -1,0 +1,261 @@
+@import url('fonts.css') 
+
+.setting  
+    background: url(../image/BG_Night.png) 
+    background-size:cover 
+    color: #F8F8F8 
+    font-family: 'NunitoSans' 
+    font-size: 17.5px 
+ 
+
+
+/* Блок главного контейнера адаптивной верски */
+.conteiner  
+    width: 960px 
+    margin: 3.5px auto 0 
+    display: flex 
+    flex-direction: column 
+    gap: 24.5px 
+    padding-top: 14px 
+    padding-bottom: 130px 
+    &__center  
+        display: flex 
+        justify-content: center     
+ 
+/* ------------------------------------------- */
+
+/* Объединенные блоки даты и погоды */
+.header  
+    width: 100% 
+    display: flex 
+    justify-content: space-between 
+    gap: 14px 
+    
+ 
+
+/* Внешний вид блоков чтобы не дублировать */
+.abstract-block  
+    background: rgba(245, 245, 245, 0.1) 
+    border-radius: 11px 
+ 
+
+/* время, дата и день недели */
+.date  
+    width: 420px 
+    height: 114px 
+    padding: 24px 
+    flex-direction: column 
+    gap: 10px 
+    &__time  
+        font-size: 56px 
+        font-family: 'Unbounded' 
+        font-weight: 300 
+        margin: 0 
+        padding: 0 
+    &__day-of-the-week  
+        font-size: 28px 
+        font-family: 'Unbounded' 
+        font-weight: 100 
+        margin: 0 
+        padding: 0 
+ 
+/* -------------------------- */
+
+/* Город и погода */
+.cw  
+    width: 420px 
+    height: 114px 
+    padding: 24px 
+    display: flex 
+    flex-direction: column 
+    gap: 10px 
+    &__city  
+        font-family: 'Unbounded' 
+        width: 100% 
+        font-size: 36px 
+        font-weight: 300 
+        color: #F8F8F8 
+        background: rgba(245, 245, 245, 0.0) 
+        border: none 
+        outline: none 
+        margin: 0 
+        padding: 0 
+    &__weather  
+        font-family: 'Unbounded' 
+        font-weight: 100 
+        font-size: 24px 
+        margin: 0 
+        padding: 0 
+ 
+
+.todo-list  
+    padding: 24px 
+    display: flex 
+    flex-direction: column 
+    gap: 14px 
+    min-height: 300px 
+    &__title  
+        font-family: 'Unbounded' 
+        font-size: 56px 
+        font-weight: 900 
+        margin: 0 
+    &__tasks 
+        margin: 0
+        padding: 0
+        display: flex
+        flex-direction: column
+        gap: 14px
+    &__text  
+        margin: 0 
+    &__new  
+        background: rgba(245, 245, 245, 0.1) 
+        border-radius: 11px 
+        padding: 16px 19px 
+    &__new-add 
+        width: 99% 
+        font-size: 17.5px 
+        color: #F8F8F8 
+        min-height: 20px 
+        background: rgba(245, 245, 245, 0.0) 
+        border: none 
+        outline: none
+    &__new-add::placeholder 
+        color: #d1d1d1 
+    &__wait  
+        padding: 16px 19px 
+        display: flex 
+        gap: 7px 
+    &__wait-text  
+        padding: 0 
+        margin: 0 
+        font-size: 17.5px 
+        color: #F8F8F8 
+        font-family: 'NunitoSans' 
+    &__group-link 
+        opacity: 0.50
+    &__group-link:hover 
+        opacity: 1
+    &__icon  
+        width: 28px 
+        fill: red 
+ 
+
+    &__button-hidden  
+        display: none 
+    
+
+    &__confirm  
+        padding: 16px 19px 
+        display: flex 
+        gap: 7px 
+        display: flex 
+        justify-content: space-between 
+    
+
+    &__confirm-text  
+        padding: 0 
+        margin: 0 
+        font-size: 17.5px 
+        color: #F8F8F8 
+        font-family: 'NunitoSans' 
+        text-decoration: line-through 
+ 
+
+
+
+/* -------------------------- */
+
+
+
+
+@media(max-width: 1199px)  
+    .conteiner  
+        width:960px 
+        gap:42px
+     
+ 
+
+@media(max-width: 991px)  
+    .conteiner   
+        width:720px 
+        gap:28px
+     
+
+    .date  
+        height: 70px 
+        &__time  
+            font-size: 44px 
+        &__day-of-the-week  
+            font-size: 16px 
+
+    .cw  
+        height: 70px 
+        &__city  
+            font-size: 26px 
+        &__weather  
+            font-size: 16px 
+     
+    .todo-list
+        &__title  
+            font-size: 38px 
+    .cw__weather  
+
+     
+
+
+ 
+
+@media(max-width: 767px)  
+    .conteiner  
+        width:540px 
+        gap:24.5px
+     
+
+    .header  
+        flex-wrap: wrap 
+        text-align: center 
+     
+
+    .date  
+        width: 100% 
+     
+
+    .cw  
+        width: 100% 
+        &__city  
+            text-align: center 
+     
+
+ 
+
+@media(max-width: 561px)  
+    .conteiner  
+        width:440px
+     
+ 
+
+@media(max-width: 460px)  
+    .conteiner  
+        min-width:200px 
+        max-width:85% 
+        gap:21px
+     
+    .date
+        &__time  
+            font-size: 10vw 
+        &__day-of-the-week  
+            font-size: 4vw 
+     
+    .cw
+        &__city  
+           font-size: 5vw 
+        
+
+        &__weather  
+           font-size: 4vw 
+     
+    .todo-list
+        &__title  
+            font-size: 6vw 
+     
+ 
