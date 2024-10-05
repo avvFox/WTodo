@@ -29,7 +29,7 @@ class Weather {
         
         weather.getWeather().then(date => {
             
-            let temp = date['current']['apparent_temperature']; 
+            let temp = Math.round(date['current']['apparent_temperature']); 
             let temp_code = date['current']['weather_code'];
             let temp_str = Weather.getStrWeather(temp_code);
             

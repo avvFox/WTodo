@@ -3,10 +3,10 @@ class Setting {
         this._block = document.querySelector('.setting');
         
         this._pathBG = 'image/';
-        this._bgNigh = 'BG_NIGHT.png';
-        this._bgDay = 'BG_DAY.png';
-        this._bgEvning = 'BG_EVNING.png';
-        this._bgMorning = 'BG_MORNING.png';
+        this._bgNigh = 'BG_NIGHT.jpg';
+        this._bgDay = 'BG_DAY.jpg';
+        this._bgEvning = 'BG_EVNING.jpg';
+        this._bgMorning = 'BG_MORNING.jpg';
     }
 
     get block() {
