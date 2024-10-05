@@ -2,11 +2,11 @@ class Setting {
     constructor() {
         this._block = document.querySelector('.setting');
         
-        this._pathBG = 'image/';
-        this._bgNigh = 'bg_night.jpg';
-        this._bgDay = 'bg_day.jpg';
-        this._bgEvning = 'bg_evning.jpg';
-        this._bgMorning = 'bg_morning.jpg';
+        this._pathBG = 'image/bg/';
+        this._bgNigh = 'night.jpg';
+        this._bgDay = 'day.jpg';
+        this._bgEvning = 'evning.jpg';
+        this._bgMorning = 'morning.jpg';
     }
 
     get block() {
