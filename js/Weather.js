@@ -93,17 +93,18 @@ class Weather {
     }
 
     async getWeather() {
-        let response = await fetch(this._query);
-        if (response.status) {
-            //console.log(weather);
-            //this._temperature = weather['current']['apparent_temperature'];
-            //this._str_weather = this.getStrWeather(weather['current']['weather_code']);
-            return await response.json();
+        try {
+            let response = await fetch(this._query);
+            if (response.status) return await response.json();
+            else new Error('Ошибка получения ответа от сервера погоды!');
+        } catch(e) {
+            console.log(e);
         }
     }
 
 
     static getStrWeather(code) {
+        //console.log(code);
         switch(code) {
             case 0:
                 return 'ясно';
@@ -117,6 +118,12 @@ class Weather {
                 return 'туман'; 
             case 48:
                 return 'иней';
+            case 51: 
+                return 'небольшой моросящий дождь';
+            case 53: 
+                return 'моросящий дождь';
+            case 55: 
+                return 'сильный моросящий дождь';
             case 56:
                 return 'небольшой моросящий дождь'
             case 57:

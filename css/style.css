@@ -1,7 +1,7 @@
 @charset "UTF-8";
 @import url("fonts.css");
 .setting {
-  background: url(../image/BG_Night.png);
+  background: #0d165f;
   background-size: cover;
   color: #F8F8F8;
   font-family: "NunitoSans";

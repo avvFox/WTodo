@@ -13,17 +13,22 @@ my_date.week = MyDate.getDay(new Date());
 
 //Блок setting
 let setting = new Setting();
-setting.bgUpdate(new Date().getHours()); // фон согласно времени!
 
-//Обнавлие времени каждую секунду 
+
+
+let updateInterval = 1000 * 60 * 30; // каждые 30 минут
+setInterval(() => {
+    setting.bgUpdate();
+},updateInterval);
+setting.bgUpdate();
+
+
+//Обновление времени каждую секунду 
 function updateSecond() {
     my_date.time = MyDate.getTime(new Date());
-    setTimeout(updateSecond, 1000);
-    
+    setTimeout(updateSecond, 1000);    
 }
 setTimeout(updateSecond, 1000);
-    
-
 TodoList.start();
 Weather.start();
 

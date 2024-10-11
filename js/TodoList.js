@@ -109,8 +109,13 @@ class TodoList {
     static getAllObjects() {
         let arr = [];
         for (let [key, value] of Object.entries(localStorage)) {
-            let obj = JSON.parse(value);
-            arr.push(obj);
+            try {
+                let obj = JSON.parse(value);
+                arr.push(obj);
+            } catch(e) {
+                console.log(e);
+            }
+            
         }
         return arr;
     }
