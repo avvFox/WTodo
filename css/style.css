@@ -11,8 +11,8 @@
 .setting:before {
   content: "";
   display: block;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   position: absolute;
   top: 0;
   left: 0;
@@ -130,6 +130,17 @@
 }
 .todo-list__text {
   margin: 0;
+}
+.todo-list__delete-all {
+  align-self: center;
+  width: 200px;
+  height: 40px;
+  border-color: #fa9f9f;
+  color: #F8F8F8;
+  background: rgba(224, 123, 123, 0.3843137255);
+}
+.todo-list__delete-all:hover {
+  background: rgba(221, 56, 56, 0.2);
 }
 .todo-list__new {
   background: rgba(245, 245, 245, 0.1);

@@ -2,75 +2,22 @@ class Weather {
 
     //https://open-meteo.com/en/docs#latitude=45.0448&longitude=38.976&current=apparent_temperature,weather_code&hourly=&wind_speed_unit=ms&timezone=Europe%2FMoscow&forecast_days=1
     
-    static start() {
-        let input = document.querySelector('.cw__city');
-        let form = input.parentNode;
-        let weatherH3 = document.querySelector('.cw__weather');
-
-
-
-        input.value = Weather.getCity();
-        form.addEventListener('submit', (event) => {
-            event.preventDefault();
-            Weather.setCity(input.value);
-            Weather.start();
-        });
-
-        form.addEventListener('change', (event) => {
-            event.preventDefault();
-            Weather.setCity(input.value);
-            Weather.start();
-        });
-
-        
-        
-
-        let weather =  new Weather(Weather.getCity());
-        
-        weather.getWeather().then(date => {
-            
-            let temp = Math.round(date['current']['apparent_temperature']); 
-            let temp_code = date['current']['weather_code'];
-            let temp_str = Weather.getStrWeather(temp_code);
-            
-            weatherH3.innerHTML = temp+'° '+temp_str;
-
-        });
-        setInterval(() => {               
-            weather.getWeather().then(date => {
-                console.log(date);
-                let temp = date['current']['apparent_temperature']; 
-                let temp_code = date['current']['weather_code'];
-                let temp_str = Weather.getStrWeather(temp_code);
-                
-                weatherH3.innerHTML = temp+'° '+temp_str;
-    
-                
-            }); 
-        }, 1000 * 60 * 15); // обнолвние каждые 15 минут
-
-
-    }
-    
-    
-    constructor(city = 'Краснодар') {
-        this._city = city;
+    constructor() {
+        this._city = Weather.getCity();
         this._latitude = Weather.getAllCitiesCoordinates().get(this._city)[0];
         this._longitude =  Weather.getAllCitiesCoordinates().get(this._city)[1];
-
         this._query = 'https://api.open-meteo.com/v1/forecast?latitude='+this._latitude+'&longitude='+this._longitude+'&current=apparent_temperature,weather_code&wind_speed_unit=ms&timezone=Europe%2FMoscow&forecast_days=1';
-        this._time = new Date();
+        
 
-
-        //console.log(this.getWeather());
     }
+
 
     static getCity() {
         if (localStorage.getItem('cityNow')) return JSON.parse(localStorage.getItem('cityNow'));
         return 'Краснодар';
     }
 
-    static setCity(city) {
+    static setCity(city) { // я тут
         try {
             let cities = Weather.getAllCitiesCoordinates();
             if (!cities.get(city)) throw new Error('Добавте город в getAllCitiesCoordinates');
@@ -80,9 +27,9 @@ class Weather {
         }
     }
 
-    get temperature() {
-        return this._temperature;
-    }
+    // get temperature() {
+    //     return this._temperature;
+    // }
     static getAllCitiesCoordinates() {
         let arr = new Map();
         arr.set('Москва', ['55.7522','37.6156']);
@@ -95,7 +42,13 @@ class Weather {
     async getWeather() {
         try {
             let response = await fetch(this._query);
-            if (response.status) return await response.json();
+            if (response.status) {    
+                let data = await response.json();
+                let temp = Math.round(data['current']['apparent_temperature']); ;
+                let temp_code = data['current']['weather_code'];
+                
+                return temp+'° '+Weather.getStrWeather(temp_code);
+            }
             else new Error('Ошибка получения ответа от сервера погоды!');
         } catch(e) {
             console.log(e);
@@ -104,7 +57,6 @@ class Weather {
 
 
     static getStrWeather(code) {
-        //console.log(code);
         switch(code) {
             case 0:
                 return 'ясно';
@@ -166,6 +118,10 @@ class Weather {
                 return 'ошибка...'; 
         }
 
+    }
+
+    toString() {
+        return Weather.getCity();
     }
 
     
